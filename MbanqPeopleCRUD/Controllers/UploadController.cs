@@ -50,6 +50,7 @@ namespace FileUpload.Controllers
                         DataTable dt = ds.Tables["person"];
 
                         conn.Open();
+
                         using (SqlBulkCopy copy = new SqlBulkCopy(conn, SqlBulkCopyOptions.CheckConstraints, null))
                         {
                             copy.BatchSize = 5000;
