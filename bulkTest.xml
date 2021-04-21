@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <person>
+    <TIN>31415926</TIN>
+    <Name>Richard B.</Name>
+    <Surname>Randall</Surname>
+    <Place>Hattiesburg, MS 39402</Place>
+    <Address>2536 Reppert Coal Road</Address>
+    <Phone>601-215-4544</Phone>
+    <Email>RichardBRandall@superrito.com</Email>
+  </person>
+  <person>
+    <TIN>53589793</TIN>
+    <Name>John G.</Name>
+    <Surname>Sharp</Surname>
+    <Place>Snowmass, CO 81654</Place>
+    <Address>902 Stark Hollow Road</Address>
+    <Phone>970-922-3795</Phone>
+    <Email>JohnGSharp@gustr.com
+</Email>
+  </person>
+  <person>
+    <TIN>2384626433</TIN>
+    <Name>Larry H.</Name>
+    <Surname>Santora</Surname>
+    <Place>Reno, NV 89501</Place>
+    <Address>1588 Rockford Road</Address>
+    <Phone>775-218-7299
+</Phone>
+    <Email>LarryHSantora@superrito.com</Email>
+  </person>
+  <person>
+    <TIN>is this a valid tin? nope</TIN>
+    <Name>test</Name>
+    <Surname>sdhh</Surname>
+    <Place>malaga</Place>
+    <Address>notmyaddress, 6</Address>
+    <Phone>6789101112</Phone>
+    <Email>email@example.com</Email>
+  </person>
+</root>
