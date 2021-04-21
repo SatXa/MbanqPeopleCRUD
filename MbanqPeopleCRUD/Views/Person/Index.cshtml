@@ -10,6 +10,18 @@
     @Html.ActionLink("Create New", "Create")
 </p>
 
+@using (Html.BeginForm("UploadFile", "Upload", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div style="margin-bottom: 50px">
+        @Html.TextBox("file", "", new { type = "file" }) <br />
+
+        <input type="submit" value="Upload" />
+
+        @ViewBag.Message
+
+    </div>
+}
+
 @using (Html.BeginForm())
 {
     <p>

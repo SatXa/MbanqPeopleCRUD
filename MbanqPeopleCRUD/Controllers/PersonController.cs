@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -22,7 +23,7 @@ namespace MbanqPeopleCRUD.Controllers
 
             // SELECT FROM
             var people = from s in db.Person
-                           select s;
+                         select s;
 
             // WHERE Filters
             if (!String.IsNullOrEmpty(nameFilter))
@@ -105,9 +106,16 @@ namespace MbanqPeopleCRUD.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Person.Add(person);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                try
+                {
+                    db.Person.Add(person);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                catch (DbUpdateException)
+                {
+                    return RedirectToAction("Index");
+                }
             }
 
             return View(person);
@@ -169,6 +177,16 @@ namespace MbanqPeopleCRUD.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        //[HttpPost, ActionName("BulkInsert")]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult BulkInsert(int id)
+        //{
+        //    //Person person = db.Person.Find(id);
+        //    //db.Person.Remove(person);
+        //    //db.SaveChanges();
+        //    return RedirectToAction("Index");
+        //}
 
         protected override void Dispose(bool disposing)
         {
